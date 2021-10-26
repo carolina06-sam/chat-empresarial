@@ -22,9 +22,10 @@ const generarJWT = (uid) => {
     });
 };
 
-const comprobarJWR = (token = "") => {
+const comprobarJWT = (token = "") => {
     try {
         const { uid } = jwt.verify(token, process.env.JWT_KEY);
+
         return [true, uid];
     } catch (error) {
         return [false, null];
@@ -33,5 +34,5 @@ const comprobarJWR = (token = "") => {
 
 module.exports = {
     generarJWT,
-    comprobarJWR,
+    comprobarJWT,
 };
