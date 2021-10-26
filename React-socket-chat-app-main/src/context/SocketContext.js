@@ -8,7 +8,7 @@ export const SocketContext = createContext();
 
 export const SocketProvider = ({ children }) => {
 
-    const { socket, online, conectarSocket, desconectarSocket } = useSocket('https://intopcol-mongo.herokuapp.com');
+    const { socket, online, conectarSocket, desconectarSocket } = useSocket('http://localhost:8000/api');
     const { auth } = useContext( AuthContext );
 
     useEffect(() => {
